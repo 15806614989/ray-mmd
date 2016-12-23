@@ -29,6 +29,7 @@ Ray-MMD
 
 #### 更新内容 :
 ##### 2016-12-23 ver 1.2.0beta
+* 优化Skylighting载入速度
 * 修复了自发光材质被透明物体遮挡时不发光的bug
 * 修复了Skylighting计算SSS的bug
 
