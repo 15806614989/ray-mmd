@@ -187,7 +187,7 @@ void ShadingMaterial(MaterialParam material, float3 FlatNormal, float3 V, out fl
     else if (material.lightModel == SHADINGMODELID_CLOTH)
     {
         float4 specular2 = ImageBasedLightCloth(material, worldNormal, worldView, worldReflect);
-        specular = lerp(specular, specular2.rgb, specular2.a);
+        specular = lerp(specular, prefilteredSpeculr * specular2.rgb, specular2.a);
     }
 #else
     if (material.lightModel == SHADINGMODELID_SKIN || material.lightModel == SHADINGMODELID_SUBSURFACE)
