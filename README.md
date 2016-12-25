@@ -28,6 +28,9 @@ Ray-MMD
 * [Coding](https://coding.net/u/raycast/p/ray-mmd)
 
 #### 更新内容 :
+##### 2016-12-25 ver 1.2.0beta
+* 修复了SSS的bug
+
 ##### 2016-12-23 ver 1.2.0beta
 * 优化Skylighting载入速度
 * 修复了自发光材质被透明物体遮挡时不发光的bug
