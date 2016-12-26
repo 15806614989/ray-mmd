@@ -89,7 +89,9 @@ float4 ShadingOpacityPS(
 	float3 lighting = ShadingMaterial(material, N, V, L, coord);
 	lighting += tex2Dlod(LightMapSamp, float4(coord, 0, 0)).rgb;
 	lighting += srgb2linear(tex2Dlod(ScnSamp, float4(coord, 0, 0)).rgb);
+#if IBL_QUALITY
 	lighting += ShadingImageBasedLighting(material, EnvLightMapSamp, screenPosition, coord, N, V, false);
+#endif
 
 	return float4(lighting, material.linearDepth);
 }
@@ -176,8 +178,10 @@ float4 ShadingTransparentPS(
 
 	float3 lighting = lightingAlpha.rgb + lightingAlpha.a;
 	lighting += ShadingMaterial(material, N, V, L, coord);
+#if IBL_QUALITY
 	lighting += ShadingImageBasedLighting(material, EnvLightAlphaMapSamp, screenPosition, coord, N, V, true);
-	
+#endif
+
 	float ior = saturate(1 - material.specular.x / 0.04) * (1 - material.alpha) * material.alpha * 0.04325;
 	float3 prefilteredRefract = tex2Dlod(ShadingMapTempSamp, float4(coord, 0, 0)).rgb;
 	lighting = lerp(prefilteredRefract, lighting, material.alpha);
