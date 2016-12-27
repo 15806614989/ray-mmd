@@ -28,6 +28,9 @@ Ray-MMD
 * [Coding](https://coding.net/u/raycast/p/ray-mmd)
 
 #### 更新内容 :
+##### 2016-12-27 ver 1.2.0beta
+* 修复了纯黑物体specular计算出错
+
 ##### 2016-12-25 ver 1.2.0beta
 * 修复了SSS的bug
 
