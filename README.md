@@ -30,6 +30,7 @@ Ray-MMD
 #### 更新内容 :
 ##### 2016-12-27 ver 1.2.0beta
 * 修复了纯黑物体specular计算出错
+* 修复了启用自发光材质时CustomID无效
 
 ##### 2016-12-25 ver 1.2.0beta
 * 修复了SSS的bug
